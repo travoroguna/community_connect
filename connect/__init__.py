@@ -6,12 +6,12 @@ from flask_migrate import Migrate
 
 
 def create_app(config=None) -> flask.Flask:
-    app = flask.Flask(__name__, isinstance_relative_config=True)
+    app = flask.Flask(__name__, instance_relative_config=True)
 
     if config is None:
-        app.config_from_file("config_dev.toml", silent=True)
+        app.config.from_file("config_dev.toml", load=toml.load, silent=True)
     else:
-        app.config_from_file(config, load=toml.load, silent=True)
+        app.config.from_file(config, load=toml.load, silent=True)
 
     with app.app_context():
         create_services(app)
@@ -28,6 +28,9 @@ def create_services(app: flask.Flask):
     db.create_all()
     db.session.commit()
 
-    
+    from .api.v1 import api
+    api.set_resources(app)
+
+
 
 
