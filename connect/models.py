@@ -11,10 +11,11 @@ db = current_app.extensions["sqlalchemy"]
 class User(db.Model):
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
+
 
     auth_token = db.relationship("AuthToken", back_populates="user", lazy=True)
 
@@ -25,7 +26,7 @@ class User(db.Model):
 
 class Event(db.Model):
     __tablename__ = "events"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
     location = db.Column(db.String(100), nullable=False)
@@ -38,7 +39,7 @@ class Event(db.Model):
 
 class Donation(db.Model):
     __tablename__ = "donations"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     amount = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     event_id = db.Column(db.Integer, db.ForeignKey("events.id"), nullable=False)
@@ -50,7 +51,7 @@ class Donation(db.Model):
 
 class ExternalEvent(db.Model):
     __tablename__ = "external_events"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
     link = db.Column(db.String(200), nullable=False)
@@ -62,6 +63,7 @@ class ExternalEvent(db.Model):
 class AuthToken(db.Model):
     __tablename__ = "auth_tokens"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     token = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user = db.relationship("User", back_populates="auth_token")
