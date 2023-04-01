@@ -59,7 +59,15 @@ class Donation(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user = db.relationship("User", back_populates="donations")
-
+    
+    def to_dict(self):
+        return {
+            "id":self.id,
+            "event_id":self.event_id,
+            "timestamp":self.timestamp,
+            "status":self.status,
+        }
+        
 class ExternalEvent(db.Model):
     __tablename__ = "external_events"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

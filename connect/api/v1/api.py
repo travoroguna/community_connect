@@ -349,8 +349,28 @@ class ExternalEvents(Resource):
             if events
             else ({"message": "No events found"}, 404)
         )
+  
+class DonationResource(Resource):
+    def get(self, donation: int, authorisation: str):
+       
+        user = user_from_token(authorisation)
+        
+        if not user:
+            return {"message": "Invalid token"}, 401
+            
+        donation = db.session.query(models.Donation).filter(models.Donation.id == donation).one()
+        
+        if not donation:
+            return {"message": "Donation Not Found"}, 404
+        
+        if donation.user_id != user.id:
+            return {"message": "Authentication Failure"}, 401
+        
+        return {"donation": donation.to_dict()}, 200
     
-
+    
+        
+        
 
 def set_resources(app: Flask):
     api = Api(app)
@@ -360,4 +380,4 @@ def set_resources(app: Flask):
     api.add_resource(Events, "/events/api/v1/<string:authorisation>")
     api.add_resource(FutureEvents, "/future_events/api/v1")
     api.add_resource(ExternalEvents, "/external_events/api/v1")
-
+    api.add_resource(DonationResource, "/donation/api/v1", "/donation/api/v1/<int:donation>/<string:authorisation>" )
