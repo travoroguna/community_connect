@@ -26,3 +26,8 @@ apply changes
 ```bash
 flask db upgrade
 ```
+
+
+api documentation
+
+[api documentation](https://app.swaggerhub.com/apis/travoroguna/default-title/0.1)
