@@ -6,10 +6,10 @@ import NavBar from "../components/NavBar";
 import { signin } from "../api/ApiRoute";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [hasError, setHasError] = useState(false);
 
-  const { email, password } = formData;
+  const { username, password } = formData;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -43,11 +43,11 @@ const Login = () => {
             <h2>Welcome Back!</h2>
             {hasError && <div className="error">Server error</div>}
             <input
-              type="email"
-              placeholder="Email"
-              name="email"
+              type="text"
+              placeholder="Username"
+              name="username"
               required
-              value={email}
+              value={username}
               onChange={handleChange}
             />
             <input
