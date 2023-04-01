@@ -40,42 +40,42 @@ const NavBar = () => {
           <path
             d="M47 9.52779C48.6569 9.52779 50 8.61371 50 7.48612C50 6.35854 48.6569 5.44446 47 5.44446C45.3431 5.44446 44 6.35854 44 7.48612C44 8.61371 45.3431 9.52779 47 9.52779Z"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-miterlimit="10"
+            strokeWidth="0.666667"
+            strokeMiterlimit="10"
           />
           <path
             d="M36 28.5153C36 28.5153 38.1 25.3167 38.5 21.9819C38.7 20.2806 38.8 15.6528 38.8 15.6528C38.9 13.7472 41.2 12.25 44 12.25H50C52.8 12.25 55.1 13.7472 55.2 15.6528L56 28.5153"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.666667"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M52 16.0611L53.9 42.0583C54 42.8069 53.2 43.2833 52.4 43.2833C51.6 43.2833 51 42.875 50.9 42.3986L48.2 26.5417C48.1 26.1333 47.7 25.793 47 25.793C46.3 25.793 45.9 26.1333 45.8 26.5417L43.1 42.3986C43 42.875 42.4 43.2833 41.6 43.2833C40.8 43.2833 40 42.8069 40.1 42.0583L42 16.0611"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.666667"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M25 9.52779C26.6569 9.52779 28 8.61371 28 7.48612C28 6.35854 26.6569 5.44446 25 5.44446C23.3431 5.44446 22 6.35854 22 7.48612C22 8.61371 23.3431 9.52779 25 9.52779Z"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-miterlimit="10"
+            strokeWidth="0.666667"
+            strokeMiterlimit="10"
           />
           <path
             d="M16 28.5153L16.8 15.6528C16.9 13.7472 19.2 12.25 22 12.25H28C30.8 12.25 33.1 13.7472 33.2 15.6528C33.2 15.6528 33.3 20.2125 33.5 21.9819C33.9 25.3167 36 28.5153 36 28.5153"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.666667"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M20 16.0611L18.1 42.0583C18 42.8069 18.8 43.2833 19.6 43.2833C20.4 43.2833 21 42.875 21.1 42.3986L23.8 26.5417C23.9 26.1333 24.3 25.793 25 25.793C25.7 25.793 26.1 26.1333 26.2 26.5417L28.9 42.3986C29 42.875 29.6 43.2833 30.4 43.2833C31.2 43.2833 32 42.8069 31.9 42.0583L30 16.0611"
             stroke="black"
-            stroke-width="0.666667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.666667"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
 

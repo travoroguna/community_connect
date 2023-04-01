@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "../css/Service.css";
 import ServiceItem from "./ServiceItem";
 
@@ -7,6 +7,19 @@ const Service = () => {
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+
+  const slidesRef = useRef(null);
+  const [scrollX, setScrollX] = useState(0);
+
+  const handleScroll = () => {
+    const slides = slidesRef.current;
+    setScrollX(slides.scrollLeft);
+  };
+
+  const handlePrevClick = () => {
+    const slides = slidesRef.current;
+    slides.scrollBy(-slides.offsetwidth, 0);
+  };
 
   function handleMouseDown(e) {
     setIsDragging(true);
@@ -45,21 +58,26 @@ const Service = () => {
   return (
     <div
       className="service"
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      // onMouseDown={handleMouseDown}
+      // onMouseMove={handleMouseMove}
+      // onMouseUp={handleMouseUp}
+      // onTouchStart={handleTouchStart}
+      // onTouchMove={handleTouchMove}
+      // onTouchEnd={handleTouchEnd}
     >
       <div
         className="sliding-element"
-        style={{ transform: `translateX(${translateX}px)` }}
+        ref={slidesRef}
+        onScroll={handleScroll}
+        // style={{ transform: `translateX(${translateX}px)` }}
       >
         {arr.map((product, index) => (
-          <ServiceItem key={index} />
+          <ServiceItem />
         ))}
       </div>
+      <button className="prev" onClick={handlePrevClick}>
+        &lt;
+      </button>
     </div>
   );
 };

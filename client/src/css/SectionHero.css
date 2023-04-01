@@ -16,7 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  height: 70%;
 }
 .hero .signup-container h1 {
   font-weight: 500;
