@@ -37,7 +37,7 @@ const Login = () => {
 
       <main>
         <form>
-          <img src="/images/sterling-cares.jpg" />
+          <img src="/images/sterling-cares.jpg" alt="" />
 
           <div className="form">
             <h2>Welcome Back!</h2>

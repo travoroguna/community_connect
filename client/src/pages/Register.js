@@ -27,7 +27,7 @@ const Register = () => {
 
       <main>
         <form>
-          <img src="/images/sterling-cares.jpg" />
+          <img src="/images/sterling-cares.jpg" alt="" />
 
           <div className="form">
             <h2>Create Account</h2>

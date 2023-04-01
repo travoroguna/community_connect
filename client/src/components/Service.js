@@ -57,7 +57,7 @@ const Service = () => {
         style={{ transform: `translateX(${translateX}px)` }}
       >
         {arr.map((product, index) => (
-          <ServiceItem />
+          <ServiceItem key={index} />
         ))}
       </div>
     </div>
