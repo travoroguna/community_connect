@@ -2,14 +2,24 @@
   width: 100%;
   padding: 10px 100px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .nav .logo {
-  flex: 0.5;
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+}
+.nav .logo svg {
+  transform: scale(0.9);
+}
+.nav .logo h2 {
+  padding-left: 10px;
+  font-size: 20px;
 }
 .nav ul {
-  flex: 0.6;
+  flex: 0.4;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
