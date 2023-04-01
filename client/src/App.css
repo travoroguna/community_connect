@@ -30,3 +30,8 @@ ul {
 a {
   text-decoration: none;
 }
+
+:root {
+  --btn-light: #6b7bd3;
+  --background-light: #9999ff;
+}
