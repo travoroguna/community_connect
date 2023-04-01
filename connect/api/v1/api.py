@@ -64,9 +64,9 @@ class UserResource(Resource):
         return {"message": "User created"}, 201
 
     def post(self, auth_type: str):
-        print(request.headers, request.data)
+        print(request.headers, request.data, auth_type)
 
-        if auth_type == "log_in":
+        if auth_type == "sign-in":
             args = self.log_in_parser.parse_args()
             username = args["username"]
             password = args["password"]
@@ -74,7 +74,7 @@ class UserResource(Resource):
             return self.log_in(username, password)
         
 
-        elif auth_type == "sign_up":
+        elif auth_type == "sign-up":
             args = self.sign_up_parser.parse_args()
             username = args["username"]
             email = args["email"]
@@ -374,10 +374,10 @@ class DonationResource(Resource):
 
 def set_resources(app: Flask):
     api = Api(app)
-    api.add_resource(UserResource, "/user/api/v1/<string:auth_type>")
-    api.add_resource(EventResource, "/event/api/v1", "/event/api/v1/<int:event_id>")
-    api.add_resource(ExternalEventResource, "/external_event/api/v1", "/external_event/api/v1/<int:event_id>")
-    api.add_resource(Events, "/events/api/v1/<string:authorisation>")
-    api.add_resource(FutureEvents, "/future_events/api/v1")
-    api.add_resource(ExternalEvents, "/external_events/api/v1")
-    api.add_resource(DonationResource, "/donation/api/v1", "/donation/api/v1/<int:donation>/<string:authorisation>" )
+    api.add_resource(UserResource, "/api/v1/user/<string:auth_type>")
+    api.add_resource(EventResource, "/api/v1/event", "/event/api/v1/<int:event_id>")
+    api.add_resource(ExternalEventResource, "/api/v1/external_event", "/api/v1/external_event/<int:event_id>")
+    api.add_resource(Events, "/api/v1/events/<string:authorisation>")
+    api.add_resource(FutureEvents, "/api/v1/future_events")
+    api.add_resource(ExternalEvents, "/api/v1/external_events")
+    api.add_resource(DonationResource, "/api/v1/donation/", "/api/v1/donation/<int:donation>/<string:authorisation>" )

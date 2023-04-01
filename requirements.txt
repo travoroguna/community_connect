@@ -4,3 +4,4 @@ flask-migrate
 flask-restful
 toml
 pyjwt
+flask-cors
