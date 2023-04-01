@@ -3,7 +3,7 @@ import string
 import random
 import json
 
-url = 'http://localhost:5000//user/api/v1/'
+url = 'http://localhost:5000/user/api/v1/'
 headers = {"Content-Type": "application/json; charset=utf-8"}
 
 
