@@ -1,0 +1,19 @@
+.nav {
+  width: 100%;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav .logo {
+  flex: 0.5;
+}
+.nav ul {
+  flex: 0.6;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.nav ul li a {
+  color: black;
+}/*# sourceMappingURL=NavBar.css.map */
