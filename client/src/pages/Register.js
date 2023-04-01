@@ -3,32 +3,22 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../css/Login.css";
 import NavBar from "../components/NavBar";
-import { signin } from "../api/ApiRoute";
 
-const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [hasError, setHasError] = useState(false);
+const Register = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
 
-  const { email, password } = formData;
+  const { email, password, username } = formData;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setHasError(false);
   };
 
   const submit = (e) => {
     e.preventDefault();
-
-    axios
-      .post(signin, formData)
-      .then((res) => {
-        console.log(res);
-        setHasError(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setHasError(true);
-      });
   };
 
   return (
@@ -40,8 +30,15 @@ const Login = () => {
           <img src="/images/sterling-cares.jpg" />
 
           <div className="form">
-            <h2>Welcome Back!</h2>
-            {hasError && <div className="error">Server error</div>}
+            <h2>Create Account</h2>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              required
+              value={username}
+              onChange={handleChange}
+            />
             <input
               type="email"
               placeholder="Email"
@@ -58,9 +55,9 @@ const Login = () => {
               value={password}
               onChange={handleChange}
             />
-            <button type="submit">SIGN IN</button>
+            <button type="submit">SIGN UP</button>
             <p>
-              Don't have an account? <Link to="/signup">Sign Up</Link>
+              Already Have An Account? <Link to="/signin">Sign In</Link>
             </p>
           </div>
         </form>
@@ -69,4 +66,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
