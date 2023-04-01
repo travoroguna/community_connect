@@ -17,7 +17,7 @@ class User(db.Model):
     password = db.Column(db.String(120), nullable=False)
 
 
-    auth_token = db.relationship("AuthToken", back_populates="user", lazy=True)
+    auth_token = db.Column(db.String(200), nullable=True)
 
     external_events = db.relationship("ExternalEvent", back_populates="user", lazy=True)
     events = db.relationship("Event", back_populates="user", lazy=True)
@@ -35,6 +35,17 @@ class Event(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user = db.relationship("User", back_populates="events")
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "location": self.location,
+            "target_no_of_people": self.target_no_of_people,
+            "date": self.date.isoformat() if self.date else None,
+            "user_id": self.user_id,
+        }
 
 
 class Donation(db.Model):
@@ -55,15 +66,18 @@ class ExternalEvent(db.Model):
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
     link = db.Column(db.String(200), nullable=False)
+    date = db.Column(db.DateTime, nullable=True)
 
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user = db.relationship("User", back_populates="external_events")
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "link": self.link,
+            "date": self.date.isoformat() if self.date else None,
+            "user_id": self.user_id,
+        }
 
-class AuthToken(db.Model):
-    __tablename__ = "auth_tokens"
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    token = db.Column(db.String(200), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    user = db.relationship("User", back_populates="auth_token")
