@@ -2,6 +2,8 @@ import flask
 import toml
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_cors import CORS
+
 
 
 
@@ -30,6 +32,11 @@ def create_services(app: flask.Flask):
 
     from .api.v1 import api
     api.set_resources(app)
+
+    CORS(app, origins="http://localhost:5000", allow_headers=[
+    "Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+    resources={r"/api/*": {"origins": "*"}},
+    supports_credentials=True, intercept_exceptions=False)
 
 
 
