@@ -1,9 +1,9 @@
 .service {
   overflow-x: hidden;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  padding-top: 70px;
+  padding-bottom: 41px;
   position: relative;
-  height: 80vh;
+  height: 90vh;
 
   .sliding-element {
     display: flex;
@@ -13,7 +13,7 @@
 
     .service-item {
       background: white;
-      margin-right: 15px;
+      margin-right: 35px;
       box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
@@ -30,7 +30,8 @@
       }
 
       .service-content {
-        padding: 15px;
+        padding: 35px;
+        padding-top: 20px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -42,7 +43,7 @@
         }
 
         p {
-          padding-bottom: 10px;
+          padding-bottom: 25px;
         }
 
         a {
