@@ -1,0 +1,89 @@
+.event {
+  width: 100%;
+  main {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    form {
+      height: 90%;
+      width: 90%;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.308);
+      padding: 10px 30px;
+      background: #e6e6ff;
+      padding-bottom: 20px;
+
+      button {
+        float: right;
+        background: var(--background-light);
+        border: none;
+        padding: 10px 30px;
+        font-family: inherit;
+        outline: none;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        height: 85%;
+
+        .label {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 30px;
+
+          label {
+            font-size: 15px;
+          }
+
+          input {
+            border: none;
+            background: var(--background-light);
+            outline: none;
+            padding: 3px;
+          }
+
+          textarea {
+            width: 100%;
+            border: none;
+            background: var(--background-light);
+            outline: none;
+            padding: 3px;
+          }
+        }
+
+        .left-section {
+          flex: 0.4;
+          //   margin
+        }
+
+        .right-section {
+          flex: 0.4;
+        }
+
+        p {
+          padding-bottom: 5px;
+          font-weight: 500;
+        }
+
+        .label-time {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
