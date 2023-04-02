@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/Login.css";
 import NavBar from "../components/NavBar";
@@ -13,6 +13,8 @@ const Register = () => {
   });
   const [hasError, setHasError] = useState(false);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const { email, password, username } = formData;
 
