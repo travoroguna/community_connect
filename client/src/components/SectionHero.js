@@ -8,9 +8,7 @@ const SectionHero = () => {
       <div className="signup-container">
         <h1>Make an impact in what YOU believe in!</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-          aspernatur exercitationem. Quo rerum obcaecati minus quidem eum
-          voluptatum dicta fuga?
+          Our social impact project aims to empower individuals and communities to make a difference in the causes they believe in. With our app, you can easily donate to organizations making a positive impact, organize your own charity events, or advertise upcoming events in your area. By coming together and taking action, we can create a better world for ourselves and future generations. Join us in making a difference today!
         </p>
         <Link to="/signup" className="btn">
           Sign up
