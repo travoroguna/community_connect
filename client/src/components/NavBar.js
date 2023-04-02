@@ -86,7 +86,7 @@ const NavBar = () => {
           <Link to="/">Donate</Link>
         </li>
         <li>
-          <Link to="/">Organize an event</Link>
+          <Link to="/event">Organize an event</Link>
         </li>
         <li>
           <Link to="/">About Us</Link>
