@@ -37,6 +37,31 @@ const Event = () => {
               </div>
             </div>
           </div>
+
+          <div className="right-section">
+            <div className="label">
+              <label htmlFor="location">Location</label>
+              <input type="text" name="location" required />
+            </div>
+            <div className="label">
+              <label htmlFor="targetNumber">Target number of Volunteers</label>
+              <input type="number" name="targetNumber" required />
+            </div>
+
+            <div className="contact-details">
+              <p>Contact Details</p>
+              <div className="label">
+                <label htmlFor="companyName">
+                  Company Name / Name of Organiser
+                </label>
+                <input type="text" name="companyName" required />
+              </div>
+              <div className="label">
+                <label htmlFor="phoneNumber">Phone Number</label>
+                <input type="number" name="phoneNumber" required />
+              </div>
+            </div>
+          </div>
         </form>
       </main>
     </div>

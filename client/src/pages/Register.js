@@ -35,7 +35,7 @@ const Register = () => {
     } else if (password.length < 6) {
       setError("Password must be more than 5 characters");
       setHasError(true);
-    } else if (!emailRegex.test(email)) {
+    } else if (!emailRegex.test(email) || email.endsWith("@gmail.com")) {
       setError("Please enter a valid email address");
     } else
       axios
@@ -68,7 +68,7 @@ const Register = () => {
       <NavBar />
 
       <main>
-        <form>
+        <form onSubmit={submit}>
           <img src="/images/sterling-cares.jpg" alt="" />
 
           <div className="form">
