@@ -1,2 +1,8 @@
 __pycache__
 migrations
+node_modules
+client/build
+client/node_modules
+*.pyc
+.env
+instance/*.db
